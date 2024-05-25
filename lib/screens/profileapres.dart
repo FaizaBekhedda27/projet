@@ -1,18 +1,18 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:simple_project/screens/profileenfant.dart';
 import 'package:simple_project/screens/profilemedcin.dart';
+import 'package:simple_project/screens/raport.dart';
 import 'package:simple_project/screens/start.dart';
 
-class Profile extends StatefulWidget {
-  const Profile({Key? key}) : super(key: key);
+class ProfileE extends StatefulWidget {
+  const ProfileE({Key? key}) : super(key: key);
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  _ProfileEPageState createState() => _ProfileEPageState();
 }
 
-class _ProfilePageState extends State<Profile> {
+class _ProfileEPageState extends State<ProfileE> {
   final FirebaseAuth auth = FirebaseAuth.instance;
   //signout function
   signOut() async {
@@ -109,21 +109,27 @@ class _ProfilePageState extends State<Profile> {
             // Naviguer vers la page de notifications
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => ProfileEScreen()),
+              MaterialPageRoute(builder: (context) => ProfileScreen()),
             );
           },
         ),
         ProfileItem(
           text: 'Notifications',
           icon: Icons.notifications,
-          onTap: null,
+          onTap: () {
+            // Naviguer vers la page de notifications
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => RapportPage()),
+            );
+          },
         ),
         ProfileItem(
           text: 'Log Out',
           icon: Icons.logout_rounded,
           onTap: () async {
             signOut();
-          },
+          },//  
         ),
       ],
     );

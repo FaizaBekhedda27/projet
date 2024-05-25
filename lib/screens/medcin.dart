@@ -4,6 +4,7 @@ import 'package:simple_project/screens/homemedcin.dart';
 import 'package:simple_project/screens/more.dart';
 import 'package:simple_project/screens/profileavant.dart';
 import 'package:simple_project/screens/profilemedcin.dart';
+import 'package:simple_project/screens/score.dart';
 
 class MyHomeMedcin extends StatefulWidget {
   const MyHomeMedcin({Key? key}) : super(key: key);
@@ -46,13 +47,13 @@ class _MyHomeMedcinState extends State<MyHomeMedcin> {
             icon: const Icon(Icons.menu),
           ),
         ],
-        backgroundColor: Color.fromARGB(255, 144, 201, 201),
+        backgroundColor: Color.fromARGB(255, 115, 194, 250),
       ),
       body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Color.fromARGB(255, 149, 203, 203),
+        backgroundColor: Color.fromARGB(255, 87, 183, 252),
         fixedColor: Colors.white,
         unselectedItemColor: Colors.white,
         showUnselectedLabels: false,

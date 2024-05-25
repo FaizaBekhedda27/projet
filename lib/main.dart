@@ -51,6 +51,9 @@ class MyApp extends StatelessWidget {
                         .get(),
                     builder: (BuildContext context,
                         AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
+                      if (!snapshot.hasData || !snapshot.data!.exists) {
+                        return Center(child: CircularProgressIndicator());
+                      }
                       if (snapshot.hasData && snapshot.data!.exists) {
                         // Utilisateur authentifié est un médecin
                         return MyHomeMedcin();

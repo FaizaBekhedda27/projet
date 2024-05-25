@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:simple_project/screens/ajouterenfantmode.dart';
+import 'package:simple_project/screens/carte.dart';
 import 'package:simple_project/screens/home.dart';
 import 'package:simple_project/screens/chat.dart';
+import 'package:simple_project/screens/profileapres.dart';
+import 'package:simple_project/screens/profileavant.dart';
 
 void main() {
   runApp(MyApp());
@@ -30,9 +34,9 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<Widget> _pages = [
     HomePage(),
-    SearchPage(),
-    
-    AccountPage(),
+    EnfantList(),
+    PatientCardEnfant(),
+    ProfileE(),
   ];
 
   @override

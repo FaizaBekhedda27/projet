@@ -41,7 +41,7 @@ dependencies:
   firebase_core: ^2.27.0
   firebase_auth: ^4.17.7
   firebase_storage: ^11.6.8
-  image_picker: 0.8.4+2
+  image_picker: ^1.0.8
   cloud_firestore: ^4.15.8
   permission_handler: ^11.3.0
   audioplayers: ^5.2.1
@@ -51,6 +51,12 @@ dependencies:
   animate_do: ^3.3.4
   table_calendar: ^3.1.1
   google_fonts: ^6.2.0
+  flip_card: ^0.7.0
+  cached_network_image: ^3.3.1
+  pdf: ^3.10.8
+  open_file: ^3.3.2
+  printing: ^5.12.0
+  universal_html: ^2.2.4
   
 
 dev_dependencies:
@@ -120,7 +126,16 @@ flutter:
     - assets/images/3.png
     - assets/images/4.png
     - assets/images/doctorr.png 
-
-
-    
-  
+    - assets/images/enfant.png 
+    - assets/images/OUI.jpg
+    - assets/images/NON.jpg
+    - assets/images/rapport.png
+    - assets/images/appbar.png
+    - assets/images/icon.png
+    - assets/images/fv.jpg
+    - assets/images/medecin.png
+    - assets/images/ajouter.png
+    - assets/images/logo.png
+    - assets/images/logo1.png
+    - assets/images/patient.png
+    - assets/images/pense.png

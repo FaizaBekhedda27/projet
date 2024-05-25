@@ -29,7 +29,7 @@ class _ListeRendezVousScreenState extends State<ListeRendezVousScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 149, 203, 203),
+        backgroundColor: Color.fromARGB(255, 102, 183, 249),
         toolbarHeight: 70,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -174,13 +174,13 @@ class _ListeRendezVousScreenState extends State<ListeRendezVousScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    _buildTimeSection('Morning',
+                    _buildTimeSection('Matin',
                         ['8:30 - 9:30', '9:30 - 10:30', '10:30 - 11:30']),
                     SizedBox(height: 20),
-                    _buildTimeSection('Afternoon',
+                    _buildTimeSection('Après-midi',
                         ['13:30 - 14:30', '14:30 - 15:30', '15:30 - 16:30']),
                     SizedBox(height: 20),
-                    _buildTimeSection('Evening', ['16:30 - 17:30']),
+                    _buildTimeSection('Soir', ['16:30 - 17:30']),
                   ],
                 ),
               ),
@@ -192,7 +192,7 @@ class _ListeRendezVousScreenState extends State<ListeRendezVousScreen> {
                     onPressed: _areTimeButtonsEnabled ? _handleModifyButtonPressed : null,
                     child: Text('Modifier'),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.teal[400],
+                      primary: Color.fromARGB(255, 102, 183, 249),
                       onPrimary: Colors.white,
                       padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                       shape: RoundedRectangleBorder(
@@ -205,7 +205,7 @@ class _ListeRendezVousScreenState extends State<ListeRendezVousScreen> {
                     onPressed: _areTimeButtonsEnabled ? _handleSaveButtonPressed : null,
                     child: Text('Enregistrer'),
                     style: ElevatedButton.styleFrom(
-                      primary: Colors.teal[400],
+                      primary: Color.fromARGB(255, 102, 183, 249),
                       onPrimary: Colors.white,
                       padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
                       shape: RoundedRectangleBorder(
@@ -247,7 +247,7 @@ class _ListeRendezVousScreenState extends State<ListeRendezVousScreen> {
   }
 
   Widget _buildTimeButton(String time, bool isAvailable) {
-    Color buttonColor = timeColors[time] ?? Color.fromARGB(255, 115, 178, 171);
+    Color buttonColor = timeColors[time] ?? const Color.fromARGB(255, 163, 211, 250);
     bool isFriday = _selectedDay?.weekday == DateTime.friday;
     return ElevatedButton(
       onPressed: _areTimeButtonsEnabled && !isFriday

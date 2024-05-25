@@ -1,7 +1,6 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:simple_project/screens/chat.dart';
-
 
 class Medecin {
   final String userId; // Add userId here
@@ -102,7 +101,9 @@ class _MedecinListState extends State<MedecinList> {
                       prefixIcon: Icon(Icons.search, color: Colors.grey),
                       hintText: "Rechercher...",
                       hintStyle: TextStyle(color: Colors.grey),
-                      contentPadding: EdgeInsets.symmetric(vertical: 15), // Ajuste la hauteur du champ de recherche
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical:
+                              15), // Ajuste la hauteur du champ de recherche
                     ),
                   ),
                 ),
@@ -121,7 +122,7 @@ class _MedecinListState extends State<MedecinList> {
           ),
         ),
         elevation: 0.00,
-        backgroundColor: Color.fromARGB(255, 144, 201, 201),
+        backgroundColor: Color.fromARGB(255, 102, 183, 249),
       ),
       body: ListView.builder(
         itemCount: filteredMedecins.length,
@@ -241,8 +242,7 @@ class DoctorDetailPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                    width: 20), // Space between avatar and call button
+                SizedBox(width: 20), // Space between avatar and call button
                 _buildActionButton(
                   icon: Icons.phone,
                   label: 'Appelle',
@@ -253,17 +253,19 @@ class DoctorDetailPage extends StatelessWidget {
                   icon: Icons.message,
                   label: 'Message',
                   onTap: () {
-  Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (context) => ChatScreen(doctorId: userId, doctorName: '',),
-    ),
-  );
-},
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => DoctorChatPage(
+                          userId: userId, // Pass the doctor's user ID
+                          doctorName: '$prefix $firstName $lastName',
+                          imagePath:imagePath,
+                        ),
+                      ),
+                    );
+                  },
                 ),
-                SizedBox(
-                    width: 20), // Space between message button and avatar
+                SizedBox(width: 20), // Space between message button and avatar
               ],
             ),
             SizedBox(height: 20),

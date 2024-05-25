@@ -3,8 +3,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({Key? key}) : super(key: key);
+class ProfileEScreen extends StatelessWidget {
+  const ProfileEScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:simple_project/screens/Oppointment.dart';
+import 'package:simple_project/screens/ajouterenfantmode.dart';
+import 'package:simple_project/screens/ajouterinscrit.dart';
 import 'package:simple_project/screens/more.dart';
 import 'package:simple_project/screens/pagedoctor.dart';
+import 'package:simple_project/screens/score.dart';
 
 class HomePagemedcin extends StatefulWidget {
   @override
@@ -21,9 +24,10 @@ class _HomePagemedcinState extends State<HomePagemedcin> {
               height: 300,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    image: AssetImage('assets/images/backgroundd.jpg'),
+                    image: AssetImage('assets/images/fv.jpg'),
                     fit: BoxFit.cover),
               ),
+              /*
               child: Container(
                 decoration: BoxDecoration(
                     gradient:
@@ -31,7 +35,7 @@ class _HomePagemedcinState extends State<HomePagemedcin> {
                   Colors.black.withOpacity(.8),
                   Colors.black.withOpacity(.2),
                 ])),
-              ),
+              ),*/
             ),
             SizedBox(
               height: 30,
@@ -64,20 +68,21 @@ class _HomePagemedcinState extends State<HomePagemedcin> {
                           children: <Widget>[
                             makeItem(
                                 image: 'assets/images/1.png',
-                                title: 'Ajouter Enfant ',
+                                title: 'Ajouter patient ',
                                 onPressed: () {
                                   // Action à effectuer lors du clic sur le bouton 1   UserDetails
-                                /*  Navigator.push(
+                                  Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>
-                                          UserDetails(),
+                                              ButtonPage(),
+
                                     ),
-                                  );*/
+                                  );
                                 }),
                             makeItem(
                                 image: 'assets/images/2.png',
-                                title: 'Liste Des Enfants',
+                                title: 'Liste Des patients',
                                 onPressed: () {
                                   // Action à effectuer lors du clic sur le bouton 2
                                 }),
@@ -101,7 +106,7 @@ class _HomePagemedcinState extends State<HomePagemedcin> {
                                   );
                                 }),
                             makeItem(
-                                image: 'assets/images/4.png',
+                                image: 'assets/images/ajouter.png',
                                 title: 'Liste Des Rendez-Vous ',
                                 onPressed: () {
                                   // Action à effectuer lors du clic sur le bouton 4
@@ -113,7 +118,7 @@ class _HomePagemedcinState extends State<HomePagemedcin> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: <Widget>[
                             makeItem(
-                                image: 'assets/images/doctorr.png',
+                                image: 'assets/images/medecin.png',
                                 title: 'Liste Des Médecin',
                                 onPressed: () {
                                   // Action à effectuer lors du clic sur le bouton 3
@@ -122,6 +127,20 @@ class _HomePagemedcinState extends State<HomePagemedcin> {
                                     MaterialPageRoute(
                                       builder: (context) =>
                                           MedecinList(),
+                                    ),
+                                  );
+                                }),
+                                //
+                                makeItem(
+                                image: 'assets/images/patient.png',
+                                title: 'Diagnositic',
+                                onPressed: () {
+                                  // Action à effectuer lors du clic sur le bouton 3
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          CARSIIPage(),
                                     ),
                                   );
                                 }),
@@ -150,24 +169,29 @@ class _HomePagemedcinState extends State<HomePagemedcin> {
         height: 160, // Hauteur du bouton
         margin: EdgeInsets.symmetric(vertical: 10),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            image:
-                DecorationImage(image: AssetImage(image), fit: BoxFit.cover)),
-        child: Container(
-          padding: EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              gradient: LinearGradient(begin: Alignment.bottomRight, colors: [
-                Colors.black.withOpacity(.8),
-                Colors.black.withOpacity(.2),
-              ])),
-          child: Align(
-            alignment: Alignment.bottomLeft,
-            child: Text(
+            borderRadius: BorderRadius.circular(16),
+            color: const Color.fromARGB(255, 163, 211, 250)),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            
+            
+            Text(
               title,
-              style: TextStyle(color: Colors.white, fontSize: 16),
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 16,
+                color: Colors.black,
+              ),
+              textAlign: TextAlign.center,
             ),
-          ),
+            SizedBox(height: 10),
+            Image.asset(
+              image,
+              width: 80,
+              height: 80,
+            ),
+          ],
         ),
       ),
     );
